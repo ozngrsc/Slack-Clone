@@ -22,3 +22,7 @@
 .sidebarOption__hash {
     padding: 10px;
 }
+
+.sidebarOption > h3 {
+    font-weight: 500;
+}
