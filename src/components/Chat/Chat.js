@@ -8,6 +8,7 @@ import db from "../../firebase";
 function Chat() {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetails] = useState(null);
+  const [roomMessages, setRoomMessages] = useState();
 
   useEffect(() => {
     if (roomId) {
@@ -15,9 +16,18 @@ function Chat() {
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomDetails(snapshot.data()));
     }
+
+    db.collection("rooms")
+      .doc(roomId)
+      .collection("messages")
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) =>
+        setRoomMessages(snapshot.docs.map((doc) => doc.data()))
+      );
   }, [roomId]);
 
   console.log(roomDetails);
+  console.log(roomMessages);
 
   return (
     <div className="chat">
