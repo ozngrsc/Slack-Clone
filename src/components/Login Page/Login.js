@@ -18,21 +18,18 @@ function Login() {
           user: result.user,
         });
       })
-      .catch((error) => {
-        alert(error.message);
-      });
+      .catch((error) => alert(error.message));
   };
 
   return (
     <div className="login">
       <div className="login__container">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png"
+          src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg"
           alt=""
         />
-        <h1>Sign in to Clever Programmer HQ</h1>
-        <p>cleverprogrammer.slack.com</p>
-        <Button onClick={signIn}>Sign In with Google</Button>
+        <h1>Sign in to Geliştiren Kafalar</h1>
+        <Button onClick={signIn}>Sign in with Google</Button>
       </div>
     </div>
   );

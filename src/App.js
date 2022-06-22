@@ -23,8 +23,18 @@ function App() {
               <Sidebar />
 
               <Routes>
-                <Route path="/room/:roomId" element={<Chat />}></Route>
-                <Route path="/" element={<h1>Welcome</h1>}></Route>
+                <Route path="/room/:roomId" element={<Chat />} />
+                <Route
+                  path="/"
+                  element={[
+                    <div className="information">
+                      <h4>Welcome!</h4>
+                      <p>
+                        You can add new channels and send realtime messages.
+                      </p>
+                    </div>,
+                  ]}
+                />
               </Routes>
             </div>
           </>

@@ -10,7 +10,7 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
     if (id) {
       navigate(`/room/${id}`);
     } else {
-      navigate(title);
+      navigate("/");
     }
   };
 

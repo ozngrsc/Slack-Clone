@@ -35,7 +35,7 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__header">
         <div className="sidebar__info">
-          <h2>Clever Programmer</h2>
+          <h2>Geliştiren Kafalar</h2>
           <h3>
             <FiberManualRecordIcon />
             {user?.displayName}
@@ -57,7 +57,7 @@ function Sidebar() {
       <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
 
       {channels.map((channel) => (
-        <SidebarOption title={channel.name} id={channel.id} />
+        <SidebarOption title={channel.name} id={channel.id} key={channel.id} />
       ))}
     </div>
   );
